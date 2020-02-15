@@ -16,5 +16,5 @@
 # How to run it?
 With this simple one-liner:
 ```sh
-wget 'https://raw.githubusercontent.com/havocsec/installTools/master/installTools.sh' ; chmod +x ./installTools.sh ; ./installTools.sh
+wget -O ./installTools.sh 'https://raw.githubusercontent.com/havocsec/installTools/master/installTools.sh' ; chmod u+x ./installTools.sh ; ./installTools.sh
 ```
