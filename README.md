@@ -11,6 +11,7 @@
 - LinEnum by rebootuser (https://github.com/rebootuser/LinEnum)
 - LinuxSmartEnumeration by diego-treitos (https://github.com/diego-treitos/linux-smart-enumeration)
 - UnixPrivescCheck by pentestmonkey (https://github.com/pentestmonkey/unix-privesc-check)
+- JAWS by 411Hall (https://github.com/411Hall/JAWS)
 
 # How to run it?
 With this simple one-liner:

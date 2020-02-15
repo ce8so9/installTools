@@ -5,6 +5,7 @@ RED='\033[0;31m'
 GRE='\033[0;32m'
 NC='\033[0m'
 
+SCR_PATH='./enum-scripts/'
 verb=0
 
 header() {
@@ -15,16 +16,19 @@ header() {
     echo "/___/_/ /_/____/\__/\__,_/_/_/ /_/  \____/\____/_/____/  ";
     echo "                                             by @havocsec";
     echo ""
-    echo "Now installs/updates:"
+    echo "Now installs/updates the following tools:"
     echo " - Impacket by SecureAuthCorp (https://github.com/SecureAuthCorp/impacket)"
     echo " - Kerbrute by Tarlogic Security (https://github.com/TarlogicSecurity/kerbrute)"
     echo " - GoBuster by OJ Reeves AKA @TheColonial (https://github.com/OJ/gobuster)"
     echo " - Evil-WinRM by HackPlayers (https://github.com/Hackplayers/evil-winrm)"
     echo " - Enum4linux by Portcullis Labs (https://github.com/portcullislabs/enum4linux)"
     echo " - smbclient, a component of the SAMBA suite"
+    echo ""
+    echo "And the following enumeration scripts on ${SCR_PATH}:"
     echo " - LinEnum by rebootuser (https://github.com/rebootuser/LinEnum)"
     echo " - LinuxSmartEnumeration by diego-treitos (https://github.com/diego-treitos/linux-smart-enumeration)"
     echo " - UnixPrivescCheck by pentestmonkey (https://github.com/pentestmonkey/unix-privesc-check)"
+    echo " - JAWS by 411Hall (https://github.com/411Hall/JAWS)"
     echo ""
 }
 
@@ -117,6 +121,9 @@ apt install -y smbclient &> /dev/null
 if_err "installing smbclient"
 on_succ "smbclient"
 
+mkdir ${SCR_PATH} &> /dev/null
+cd ${SCR_PATH}
+
 # LinEnum
 echo_info "Downloading LinEnum..."
 wget -q -O ./LinEnum.sh 'https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh' &> /dev/null
@@ -135,4 +142,9 @@ wget -q -O ./upc.sh 'https://raw.githubusercontent.com/pentestmonkey/unix-prives
 if_err "downloading UnixPrivescCheck..."
 on_succ "UnixPrivescCheck"
 
+# JAWS
+echo_info "Downloading JAWS..."
+wget -q -O ./jaws-enum.ps1 'https://raw.githubusercontent.com/411Hall/JAWS/master/jaws-enum.ps1' &> /dev/null
+if_err "downloading JAWS..."
+on_succ "JAWS"
 
